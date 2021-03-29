@@ -286,6 +286,7 @@ def location(request):
     url = 'http://ip-api.com/json/'
     temp = requests.get(url.format(ip)).json()
     location = Location.objects.create(country=temp['country'], city=temp['city'], long=temp['lat'], lat=temp['lon'])
+    
     serializer = LocationSerializer(location, many=False)
     return Response(serializer.data)
 
