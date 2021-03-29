@@ -1,0 +1,1 @@
+web: gunicorn firstap.wsgi --log-file -
